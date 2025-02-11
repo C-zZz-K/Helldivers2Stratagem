@@ -3,6 +3,7 @@
 -支持随机出题
 -支持分类题库
 -支持自定义题库
+-待实现功能
 主菜单预览：
 ![image](https://github.com/user-attachments/assets/fa270bde-bab4-4c87-a506-bf7bb13bd6dd)
 游戏页面预览：
