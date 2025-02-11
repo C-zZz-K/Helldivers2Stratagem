@@ -1,27 +1,40 @@
 # build.py
 import os
 import subprocess
+import platform  # 导入 platform 模块
+
 
 def build_exe():
     command = [
         "pyinstaller",
         "--onefile",
-        "--windowed",  # 如果你的程序没有命令行界面，可以使用 --windowed 隐藏控制台
-        # 添加其他选项，如 --icon=your_icon.ico
+        "--windowed",
+        "--icon=./icons/icon.png",
+        "--name=HELLDIVERS2 Stratagems",
     ]
 
-    # 添加数据文件夹
     data_folders = [
-        "sounds", "music", "menu", "arrow", "icons", "stratagem", "fonts"
+        "sounds",
+        "music",
+        "menu",
+        "arrow",
+        "icons",
+        "stratagem",
+        "fonts",
     ]
+
+    # 根据操作系统选择正确的分隔符
+    path_separator = ":" if platform.system() != "Windows" else ";" # Corrected separator logic
+
     for folder in data_folders:
-        command.append(f"--add-data={folder}{os.sep}*;{folder}")
+        # 正确的 --add-data 格式： SOURCE:DEST
+        command.append(f"--add-data={folder}{path_separator}{folder}")
 
-    command.append("main.py") #放在最后
+    command.append("main.py")
 
-    # 执行命令
     subprocess.run(command)
     print(command)
+
 
 if __name__ == "__main__":
     build_exe()

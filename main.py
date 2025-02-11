@@ -1,7 +1,20 @@
+# main.py
 import pygame
 import random
 import os
+import sys  # 导入 sys 模块
 import time
+
+# --- 资源路径处理函数 (重要) ---
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 # 初始化 Pygame
 pygame.init()
@@ -19,25 +32,25 @@ gray = (128, 128, 128)  # 用于按钮的灰色
 
 # 字体
 try:
-    font = pygame.font.Font("./fonts/fz.ttf", 36)
-    stratagem_font = pygame.font.Font("./fonts/fz.ttf", 24)
-    all_stratagems_font = pygame.font.Font("./fonts/fz.ttf", 20)  # 所有战略装备列表字体
-    input_font = pygame.font.Font("./fonts/fz.ttf", 30)  # 输入框字体
+    font = pygame.font.Font(resource_path("fonts/fz.ttf"), 36)  # 使用 resource_path
+    stratagem_font = pygame.font.Font(resource_path("fonts/fz.ttf"), 24) # 使用 resource_path
+    all_stratagems_font = pygame.font.Font(resource_path("fonts/fz.ttf"), 20)  # 所有战略装备列表字体, 使用 resource_path
+    input_font = pygame.font.Font(resource_path("fonts/fz.ttf"), 30)  # 输入框字体, 使用 resource_path
 
 except pygame.error:
     print("Error: Could not load font. Make sure ./fonts/fz.ttf exists.")
     pygame.quit()
     exit()
 try:
-    icon = pygame.image.load("./icons/icon.png")
+    icon = pygame.image.load(resource_path("icons/icon.png")) # 使用 resource_path
     pygame.display.set_icon(icon)
 except pygame.error:
     print("Error: Could not load icon image. Make sure ./icons/icon.png exists.")
 
-# 加载图片
+# 加载图片 (使用 resource_path)
 def load_image(path, alpha=255):
     try:
-        image = pygame.image.load(path)
+        image = pygame.image.load(resource_path(path)) # 使用 resource_path
         image.set_alpha(alpha)  # 设置整体透明度
         return image
     except pygame.error:
@@ -57,12 +70,12 @@ favorite_icon = load_image("./icons/favorite.png")  # 收藏夹图标
 back_arrow_image = load_image("./arrow/left.png") # 返回按钮的图片
 # add_stratagem_set_icon = load_image("./icons/like.png")  # 不再使用图标
 
-# 加载声音
+# 加载声音 (使用 resource_path)
 try:
-    correct_sound = pygame.mixer.Sound("./sounds/right.mp3")
-    wrong_sound = pygame.mixer.Sound("./sounds/wrong.mp3")
-    confirm_sound = pygame.mixer.Sound("./sounds/confirm.mp3")
-    main_theme = pygame.mixer.Sound("./music/main_theme1.mp3")
+    correct_sound = pygame.mixer.Sound(resource_path("./sounds/right.mp3")) # 使用 resource_path
+    wrong_sound = pygame.mixer.Sound(resource_path("./sounds/wrong.mp3"))  # 使用 resource_path
+    confirm_sound = pygame.mixer.Sound(resource_path("./sounds/confirm.mp3"))  # 使用 resource_path
+    main_theme = pygame.mixer.Sound(resource_path("./music/main_theme1.mp3"))  # 使用 resource_path
 except pygame.error:
     print("Error: Could not load sound files. Check paths.")
     pygame.quit()
@@ -73,7 +86,7 @@ num_channels = 8
 correct_channels = [pygame.mixer.Channel(i) for i in range(num_channels)]
 
 
-# 题目数据
+# 题目数据 (图片路径不需要改，因为load_image函数里已经用了resource_path)
 stratagems_sets = {
     "yellow": [
         {"directions": ["up", "down", "right", "left", "up"], "image_path": "./stratagem/reinforce.png",
@@ -579,7 +592,7 @@ pygame.key.start_text_input() # 开启文本输入
 while running:
     for event in pygame.event.get():
         if game_state.state != "create_stratagem_set":
-            #原来事件处理代码
+            # 原来事件处理代码
             if event.type == pygame.QUIT:
                 running = False
             if event.type == pygame.KEYDOWN:
@@ -600,17 +613,17 @@ while running:
             elif event.type == pygame.MOUSEWHEEL:
                 if game_state.state == "all_stratagems":
                     game_state.all_stratagems_scroll_y += event.y * 20
-        elif game_state.state == "create_stratagem_set": #创建界面时的事件处理
+        elif game_state.state == "create_stratagem_set":  # 创建界面时的事件处理
             if event.type == pygame.KEYDOWN:
-                if game_state.creating_stratagem_set: # 仅在创建状态下响应
+                if game_state.creating_stratagem_set:  # 仅在创建状态下响应
                     if event.key == pygame.K_BACKSPACE:
                         game_state.custom_stratagem_set_name = game_state.custom_stratagem_set_name[:-1]
                     # 允许输入中文、字母、数字、下划线和空格
                     elif event.unicode.isalnum() or event.unicode == "_" or event.unicode == " " or '\u4e00' <= event.unicode <= '\u9fff':  # 添加中文范围
                         if len(game_state.custom_stratagem_set_name) < 20:  # 限制名称长度
                             game_state.custom_stratagem_set_name += event.unicode
-            elif event.type == pygame.MOUSEBUTTONDOWN:#增加鼠标点击事件
-                game_state.check_button_click(event.pos) #复用check_button_click函数
+            elif event.type == pygame.MOUSEBUTTONDOWN:  # 增加鼠标点击事件
+                game_state.check_button_click(event.pos)  # 复用check_button_click函数
         elif event.type == pygame.QUIT:
             running = False
 
