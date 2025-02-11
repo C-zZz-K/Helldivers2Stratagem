@@ -10,7 +10,7 @@ pygame.init()
 screen_width = 1280
 screen_height = 760
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("HELLDIVERS 2 战略配备训练")
+pygame.display.set_caption("HELLDIVERS™Ⅱ 战略装备模拟器")
 
 # 颜色
 white = (255, 255, 255)
@@ -24,6 +24,11 @@ except pygame.error:
     print("Error: Could not load font. Make sure ./fonts/fz.ttf exists.")
     pygame.quit()
     exit()
+try:
+    icon = pygame.image.load("./icons/icon.png")
+    pygame.display.set_icon(icon)
+except pygame.error:
+    print("Error: Could not load icon image. Make sure ./icons/icon.png exists.")
 
 # 加载图片
 def load_image(path):
