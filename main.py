@@ -91,69 +91,96 @@ correct_channels = [pygame.mixer.Channel(i) for i in range(num_channels)]
 # 题目数据
 stratagems_sets = {
     "yellow": [
-        {"directions": ["up", "down", "right", "left", "up"], "image_path": "./stratagem/reinforce.png",
+        {"directions": ["up", "down", "right", "left", "up"],
+         "image_path": "./stratagem/reinforce.png",
          "text": "增援"},
-        {"directions": ["up", "down", "right", "up"], "image_path": "./stratagem/sos_beacon.png",
+        {"directions": ["up", "down", "right", "up"],
+         "image_path": "./stratagem/sos_beacon.png",
          "text": "SOS信标"},
-        {"directions": ["down", "down", "up", "right"], "image_path": "./stratagem/resupply.png",
+        {"directions": ["down", "down", "up", "right"],
+         "image_path": "./stratagem/resupply.png",
          "text": "重新补给"},
         {"directions": ["down", "up", "left", "down", "up", "right", "down", "up"],
          "image_path": "./stratagem/hellbomb.png",
          "text": "地狱火炸弹"},
-        {"directions": ["up", "up", "left", "up", "right"], "image_path": "./stratagem/eagle_rearm.png",
+        {"directions": ["up", "up", "left", "up", "right"],
+         "image_path": "./stratagem/eagle_rearm.png",
          "text": "重新武装飞鹰"},
     ],
     "red": [
-        {"directions": ["right", "right", "up"], "image_path": "./stratagem/orbital_precision_strike.png",
+        {"directions": ["right", "right", "up"],
+         "image_path": "./stratagem/orbital_precision_strike.png",
          "text": "轨道精准攻击"},
         {"directions": ["right", "down", "right", "down", "right", "down"],
-         "image_path": "./stratagem/orbital_walking_barrage.png", "text": "轨道游走火力网"},
-        {"directions": ["right", "right", "right"], "image_path": "./stratagem/orbital_airburst_strike.png",
+         "image_path": "./stratagem/orbital_walking_barrage.png",
+         "text": "轨道游走火力网"},
+        {"directions": ["right", "right", "right"],
+         "image_path": "./stratagem/orbital_airburst_strike.png",
          "text": "轨道空爆攻击"},
-        {"directions": ["right", "down", "up", "right", "down"], "image_path": "./stratagem/orbital_laser.png",
+        {"directions": ["right", "down", "up", "right", "down"],
+         "image_path": "./stratagem/orbital_laser.png",
          "text": "轨道激光炮"},
         {"directions": ["right", "right", "down", "left", "right", "down"],
-         "image_path": "./stratagem/orbital_120mm_he_barrage.png", "text": "轨道120MM高爆弹"},
+         "image_path": "./stratagem/orbital_120mm_he_barrage.png",
+         "text": "轨道120MM高爆弹"},
         {"directions": ["right", "down", "up", "up", "left", "down", "down"],
-         "image_path": "./stratagem/orbital_380mm_he_barrage.png", "text": "轨道380MM高爆弹"},
+         "image_path": "./stratagem/orbital_380mm_he_barrage.png",
+         "text": "轨道380MM高爆弹"},
         {"directions": ["right", "up", "down", "down", "right"],
-         "image_path": "./stratagem/orbital_railcannon_strike.png", "text": "轨道炮攻击"},
-        {"directions": ["right", "down", "left", "up", "up"], "image_path": "./stratagem/orbital_gatling_barrage.png",
+         "image_path": "./stratagem/orbital_railcannon_strike.png",
+         "text": "轨道炮攻击"},
+        {"directions": ["right", "down", "left", "up", "up"],
+         "image_path": "./stratagem/orbital_gatling_barrage.png",
          "text": "轨道加特林空袭"},
-        {"directions": ["right", "right", "down", "right"], "image_path": "./stratagem/orbital_gas_strike.png",
+        {"directions": ["right", "right", "down", "right"],
+         "image_path": "./stratagem/orbital_gas_strike.png",
          "text": "轨道毒气攻击"},
-        {"directions": ["right", "right", "left", "down"], "image_path": "./stratagem/orbital_ems_strike.png",
+        {"directions": ["right", "right", "left", "down"],
+         "image_path": "./stratagem/orbital_ems_strike.png",
          "text": "轨道电磁冲击波"},
-        {"directions": ["right", "right", "down", "up"], "image_path": "./stratagem/orbital_smoke_strike.png",
+        {"directions": ["right", "right", "down", "up"],
+         "image_path": "./stratagem/orbital_smoke_strike.png",
          "text": "轨道烟雾攻击"},
         {"directions": ["right", "right", "down", "left", "right", "up"],
-         "image_path": "./stratagem/orbital_napalm_barrage.png", "text": "轨道凝固汽油"},
-        {"directions": ["up", "right", "down", "down", "down"], "image_path": "./stratagem/eagle_500kg_bomb.png",
+         "image_path": "./stratagem/orbital_napalm_barrage.png",
+         "text": "轨道凝固汽油"},
+        {"directions": ["up", "right", "down", "down", "down"],
+         "image_path": "./stratagem/eagle_500kg_bomb.png",
          "text": "500KG炸弹"},
-        {"directions": ["up", "right", "down", "right"], "image_path": "./stratagem/eagle_airstrike.png",
+        {"directions": ["up", "right", "down", "right"],
+         "image_path": "./stratagem/eagle_airstrike.png",
          "text": "飞鹰空袭"},
-        {"directions": ["up", "right", "right"], "image_path": "./stratagem/eagle_strafing_run.png",
+        {"directions": ["up", "right", "right"],
+         "image_path": "./stratagem/eagle_strafing_run.png",
          "text": "飞鹰机枪扫射"},
-        {"directions": ["up", "right", "down", "down", "right"], "image_path": "./stratagem/eagle_cluster_bomb.png",
+        {"directions": ["up", "right", "down", "down", "right"],
+         "image_path": "./stratagem/eagle_cluster_bomb.png",
          "text": "飞鹰集束炸弹"},
-        {"directions": ["up", "right", "down", "up"], "image_path": "./stratagem/eagle_napalm_strike.png",
+        {"directions": ["up", "right", "down", "up"],
+         "image_path": "./stratagem/eagle_napalm_strike.png",
          "text": "飞鹰凝固汽油弹"},
-        {"directions": ["up", "right", "up", "down"], "image_path": "./stratagem/eagle_smoke_strike.png",
+        {"directions": ["up", "right", "up", "down"],
+         "image_path": "./stratagem/eagle_smoke_strike.png",
          "text": "飞鹰烟雾攻击"},
-        {"directions": ["up", "right", "up", "left"], "image_path": "./stratagem/eagle_110mm_rocket_pods.png",
+        {"directions": ["up", "right", "up", "left"],
+         "image_path": "./stratagem/eagle_110mm_rocket_pods.png",
          "text": "飞鹰110MM火箭巢"},
     ],
     "green": [
         {"directions": ["down", "up", "right", "right", "up"],
-         "image_path": "./stratagem/a_mg-43_machine_gun_sentry.png", "text": "哨戒机枪"},
+         "image_path": "./stratagem/a_mg-43_machine_gun_sentry.png",
+         "text": "哨戒机枪"},
         {"directions": ["down", "up", "left", "right", "right", "left"],
-         "image_path": "./stratagem/e_mg-101_hmg_emplacement.png", "text": "重机枪部署支架"},
+         "image_path": "./stratagem/e_mg-101_hmg_emplacement.png",
+         "text": "重机枪部署支架"},
     ],
     "blue": [
-        {"directions": ["down", "left", "down", "up", "right"], "image_path": "./stratagem/mg-43_machine_gun.png",
+        {"directions": ["down", "left", "down", "up", "right"],
+         "image_path": "./stratagem/mg-43_machine_gun.png",
          "text": "机枪"},
         {"directions": ["down", "left", "right", "up", "down"],
-         "image_path": "./stratagem/apw-1_anti-materiel_rifle.png", "text": "反器材步枪"},
+         "image_path": "./stratagem/apw-1_anti-materiel_rifle.png",
+         "text": "反器材步枪"},
     ]
 }
 
@@ -217,7 +244,6 @@ class GameState:
         self.root = None
 
     def _get_tkinter_root(self):
-        """获取或创建 Tkinter 根窗口"""
         if self.root is None:
             self.root = tk.Tk()
             self.root.withdraw()  # 隐藏根窗口
@@ -395,14 +421,6 @@ class GameState:
                     self.current_stratagem_set_key = button["key"]
                     confirm_sound.play()
                     return
-        # 删除这部分
-        # if self.state == "create_stratagem_set":
-        #     if self.confirm_button_rect.collidepoint(pos):
-        #         self.create_new_stratagem_set(self.custom_stratagem_set_name)
-        #     elif self.cancel_button_rect.collidepoint(pos):
-        #         self.state = "all_stratagems"
-        #         self.creating_stratagem_set = False
-        #         confirm_sound.play()
 
     def create_new_stratagem_set(self, name):
         if name and name not in self.custom_stratagems:
@@ -511,7 +529,7 @@ game_state = GameState()
 
 def draw_menu():
     screen.blit(menu_image, (0, 0))
-    text_surface = font.render("按任意键启动游戏", True, white)
+    text_surface = font.render("按任意键进行游戏", True, white)
     text_surface.set_alpha(game_state.menu_text_alpha)
     text_rect = text_surface.get_rect(center=(screen_width // 2, screen_height - 50))
     screen.blit(text_surface, text_rect)
@@ -540,7 +558,7 @@ def draw_game():
             arrow_x += arrow_image.get_width() + 10
 
     elif game_state.current_stratagem is None:
-        empty_text = stratagem_font.render("题库为空", True, white)
+        empty_text = stratagem_font.render("该战略集合为空", True, white)
         empty_rect = empty_text.get_rect(center=(screen_width // 2, screen_height // 2))
         screen.blit(empty_text, empty_rect)
 
