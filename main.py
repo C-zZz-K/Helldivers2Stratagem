@@ -25,7 +25,7 @@ pygame.init()
 screen_width = 1280
 screen_height = 760
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("HELLDIVERS™Ⅱ 战略装备模拟器")
+pygame.display.set_caption("HELLDIVERS™Ⅱ 战略配备英雄模拟器")
 
 # 颜色
 white = (255, 255, 255)
@@ -143,28 +143,28 @@ stratagems_sets = {
          "text": "轨道烟雾攻击"},
         {"directions": ["right", "right", "down", "left", "right", "up"],
          "image_path": "./stratagem/orbital_napalm_barrage.png",
-         "text": "轨道凝固汽油"},
+         "text": "轨道凝固汽油火力网"},
         {"directions": ["up", "right", "down", "down", "down"],
          "image_path": "./stratagem/eagle_500kg_bomb.png",
-         "text": "500KG炸弹"},
+         "text": "“飞鹰”500KG炸弹"},
         {"directions": ["up", "right", "down", "right"],
          "image_path": "./stratagem/eagle_airstrike.png",
-         "text": "飞鹰空袭"},
+         "text": "“飞鹰”空袭"},
         {"directions": ["up", "right", "right"],
          "image_path": "./stratagem/eagle_strafing_run.png",
-         "text": "飞鹰机枪扫射"},
+         "text": "“飞鹰”机枪扫射"},
         {"directions": ["up", "right", "down", "down", "right"],
          "image_path": "./stratagem/eagle_cluster_bomb.png",
-         "text": "飞鹰集束炸弹"},
+         "text": "“飞鹰”集束炸弹"},
         {"directions": ["up", "right", "down", "up"],
          "image_path": "./stratagem/eagle_napalm_strike.png",
-         "text": "飞鹰凝固汽油弹"},
+         "text": "“飞鹰”凝固汽油弹空袭"},
         {"directions": ["up", "right", "up", "down"],
          "image_path": "./stratagem/eagle_smoke_strike.png",
-         "text": "飞鹰烟雾攻击"},
+         "text": "“飞鹰”烟雾攻击"},
         {"directions": ["up", "right", "up", "left"],
          "image_path": "./stratagem/eagle_110mm_rocket_pods.png",
-         "text": "飞鹰110MM火箭巢"},
+         "text": "“飞鹰”110MM火箭巢"},
     ],
     "green": [
         {"directions": ["down", "up", "right", "right", "up"],
@@ -181,6 +181,48 @@ stratagems_sets = {
         {"directions": ["down", "left", "right", "up", "down"],
          "image_path": "./stratagem/apw-1_anti-materiel_rifle.png",
          "text": "反器材步枪"},
+        {"directions": ["down", "up", "up", "left", "right"],
+         "image_path": "./stratagem/airburst_rocket_launcher.png",
+         "text": "空爆火箭发射器"},
+        {"directions": ["down", "left", "down", "up", "up", "right"],
+         "image_path": "./stratagem/autocannon.png",
+         "text": "AC-8机炮"},
+        {"directions": ["down", "down", "left", "up", "right"],
+         "image_path": "./stratagem/expendable_anti-tank.png",
+         "text": "EAT-17消耗性反坦克武器"},
+        {"directions": ["down", "down", "left", "up", "right"],
+         "image_path": "./stratagem/flamethrower.png",
+         "text": "FLAM-40火焰喷射器"},
+        {"directions": ["down", "left", "down", "up", "left"],
+         "image_path": "./stratagem/laser_cannon.png",
+         "text": "LAS-98激光大炮"},
+        {"directions": ["down", "up", "left", "up", "right", "right"],
+         "image_path": "./stratagem/guard_dog_rover.png",
+         "text": "AX/LAS-5 “护卫犬”漫游车"},
+        {"directions": ["down", "up", "left", "up", "right", "down"],
+         "image_path": "./stratagem/guard_dog.png",
+         "text": "AX/AR-23 “护卫犬”"},
+        {"directions": ["down", "up", "left", "up", "right", "up"],
+         "image_path": "./stratagem/guard_dog_dog_breath.png",
+         "text": "护卫犬腐吸"},
+        {"directions": ["down", "up", "up", "down", "up"],
+         "image_path": "./stratagem/jump_pack.png",
+         "text": "LIFT-850喷射背包"},
+        {"directions": ["down", "left", "down", "up", "up", "down"],
+         "image_path": "./stratagem/supply_pack.png",
+         "text": "B-1补给背包"},
+        {"directions": ["down", "up", "left", "right", "left", "right"],
+         "image_path": "./stratagem/shield_generator_pack.png",
+         "text": "SH-32防护罩生成包"},
+        {"directions": ["down", "left", "down", "down", "up", "left"],
+         "image_path": "./stratagem/ballistic_shield_backpack.png",
+         "text": "SH-20防弹护盾背包"},
+        {"directions": ["down", "up", "left", "right", "up", "up"],
+         "image_path": "./stratagem/directional_shield.png",
+         "text": "定向护盾"},
+        {"directions": ["down", "right", "up", "up", "up"],
+         "image_path": "./stratagem/portable_hellbomb.png",
+         "text": "地狱火背包"},
     ]
 }
 
@@ -233,7 +275,7 @@ class GameState:
 
         self.favorite_button_rect = favorite_icon.get_rect(topleft=(20, 80))
         self.back_button_rect = back_arrow_image.get_rect(topleft=(20, 20))
-        self.add_stratagem_set_text = "新建战略装备集合"
+        self.add_stratagem_set_text = "新建战略配备集合"
         self.add_stratagem_set_button_rect = all_stratagems_font.render(self.add_stratagem_set_text, True,
                                                                         white).get_rect(topleft=(20, 140))
 
@@ -314,7 +356,7 @@ class GameState:
 
         # 创建一个顶层窗口
         top = Toplevel(root)
-        top.title("新建战略装备集合")
+        top.title("新建战略配备集合")
         top.attributes('-topmost', True)  # 使其置顶
         top.geometry('300x100+200+200')
         top.lift()
@@ -558,7 +600,7 @@ def draw_game():
             arrow_x += arrow_image.get_width() + 10
 
     elif game_state.current_stratagem is None:
-        empty_text = stratagem_font.render("该战略集合为空", True, white)
+        empty_text = stratagem_font.render("该战备集合为空", True, white)
         empty_rect = empty_text.get_rect(center=(screen_width // 2, screen_height // 2))
         screen.blit(empty_text, empty_rect)
 
