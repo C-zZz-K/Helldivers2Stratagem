@@ -106,7 +106,7 @@ stratagems_sets = {
         {"directions": ["up", "up", "left", "up", "right"],
          "image_path": "./stratagem/eagle_rearm.png",
          "text": "重新武装飞鹰"},
-        {"directions": ["down", "up", "down"],
+        {"directions": ["down", "up", "down", "up"],
          "image_path": "./stratagem/super_earth_flag.png",
          "text": "超级地球旗帜"},
         {"directions": ["right", "up", "up", "down"],
