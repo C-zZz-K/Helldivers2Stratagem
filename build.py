@@ -24,7 +24,7 @@ def build_exe():
     ]
 
     # 根据操作系统选择正确的分隔符
-    path_separator = ":" if platform.system() != "Windows" else ";" # Corrected separator logic
+    path_separator = ":" if platform.system() != "Windows" else ";"  # Corrected separator logic
 
     for folder in data_folders:
         # 正确的 --add-data 格式： SOURCE:DEST

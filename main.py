@@ -106,6 +106,24 @@ stratagems_sets = {
         {"directions": ["up", "up", "left", "up", "right"],
          "image_path": "./stratagem/eagle_rearm.png",
          "text": "重新武装飞鹰"},
+        {"directions": ["down", "up", "down", "up"],
+         "image_path": "./stratagem/super_earth_flag.png",
+         "text": "超级地球旗帜"},
+        {"directions": ["right", "up", "up", "down"],
+         "image_path": "./stratagem/seaf_artillery.png",
+         "text": "超级地球武装部队大炮"},
+        {"directions": ["down", "down", "left", "right", "down", "down"],
+         "image_path": "./stratagem/prospecting_drill.png",
+         "text": "勘探钻机"},
+        {"directions": ["up", "up", "left", "right", "down", "down"],
+         "image_path": "./stratagem/prospecting_drill.png",
+         "text": "地震探测仪"},
+        {"directions": ["up", "down", "up", "down", "up", "down"],
+         "image_path": "./stratagem/tectonic_drill.png",
+         "text": "勘探钻机"},
+        {"directions": ["down", "down", "down", "up", "up"],
+         "image_path": "./stratagem/upload_data.png",
+         "text": "运送超级固态硬盘"},
     ],
     "red": [
         {"directions": ["right", "right", "up"],
@@ -122,28 +140,28 @@ stratagems_sets = {
          "text": "轨道激光炮"},
         {"directions": ["right", "right", "down", "left", "right", "down"],
          "image_path": "./stratagem/orbital_120mm_he_barrage.png",
-         "text": "轨道120MM高爆弹"},
+         "text": "轨道120MM高爆弹火力网"},
         {"directions": ["right", "down", "up", "up", "left", "down", "down"],
          "image_path": "./stratagem/orbital_380mm_he_barrage.png",
-         "text": "轨道380MM高爆弹"},
+         "text": "轨道380MM高爆弹火力网"},
         {"directions": ["right", "up", "down", "down", "right"],
          "image_path": "./stratagem/orbital_railcannon_strike.png",
          "text": "轨道炮攻击"},
         {"directions": ["right", "down", "left", "up", "up"],
          "image_path": "./stratagem/orbital_gatling_barrage.png",
-         "text": "轨道加特林空袭"},
+         "text": "轨道加特林火力网"},
         {"directions": ["right", "right", "down", "right"],
          "image_path": "./stratagem/orbital_gas_strike.png",
          "text": "轨道毒气攻击"},
         {"directions": ["right", "right", "left", "down"],
          "image_path": "./stratagem/orbital_ems_strike.png",
-         "text": "轨道电磁冲击波"},
+         "text": "轨道电磁冲击波攻击"},
         {"directions": ["right", "right", "down", "up"],
          "image_path": "./stratagem/orbital_smoke_strike.png",
          "text": "轨道烟雾攻击"},
         {"directions": ["right", "right", "down", "left", "right", "up"],
          "image_path": "./stratagem/orbital_napalm_barrage.png",
-         "text": "轨道凝固汽油火力网"},
+         "text": "轨道凝固汽油弹火力网"},
         {"directions": ["up", "right", "down", "down", "down"],
          "image_path": "./stratagem/eagle_500kg_bomb.png",
          "text": "“飞鹰”500KG炸弹"},
@@ -173,6 +191,48 @@ stratagems_sets = {
         {"directions": ["down", "up", "left", "right", "right", "left"],
          "image_path": "./stratagem/e_mg-101_hmg_emplacement.png",
          "text": "重机枪部署支架"},
+        {"directions": ["down", "left", "up", "right"],
+         "image_path": "./stratagem/anti-personnel_minefield.png",
+         "text": "反步兵地雷"},
+        {"directions": ["down", "up", "left", "right", "right", "right"],
+         "image_path": "./stratagem/anti-tank_emplacement.png",
+         "text": "AT反坦克炮台"},
+        {"directions": ["down", "left", "up", "up"],
+         "image_path": "./stratagem/anti-tank_mines.png",
+         "text": "反坦克地雷"},
+        {"directions": ["down", "up", "right", "up", "left", "up"],
+         "image_path": "./stratagem/autocannon_sentry.png",
+         "text": "自动哨戒炮"},
+        {"directions": ["down", "up", "right", "down", "right"],
+         "image_path": "./stratagem/ems_mortar_sentry.png",
+         "text": "电磁冲击波迫击哨戒炮"},
+        {"directions": ["down", "up", "right", "down", "up", "up"],
+         "image_path": "./stratagem/flame_sentry.png",
+         "text": "火焰喷射哨戒炮"},
+        {"directions": ["down", "left", "left", "right"],
+         "image_path": "./stratagem/gas_mine.png",
+         "text": "毒气地雷"},
+        {"directions": ["down", "up", "right", "left"],
+         "image_path": "./stratagem/gatling_sentry.png",
+         "text": "加特林哨戒炮"},
+        {"directions": ["down", "right", "down", "left", "right"],
+         "image_path": "./stratagem/grenadier_battlement.png",
+         "text": "掷弹兵防卫墙"},
+        {"directions": ["down", "left", "left", "down"],
+         "image_path": "./stratagem/incendiary_mines.png",
+         "text": "燃烧地雷"},
+        {"directions": ["down", "up", "right", "right", "down"],
+         "image_path": "./stratagem/mortar_sentry.png",
+         "text": "迫击哨戒炮"},
+        {"directions": ["down", "up", "right", "right", "left"],
+         "image_path": "./stratagem/rocket_sentry.png",
+         "text": "火箭哨戒炮"},
+        {"directions": ["down", "down", "left", "right", "left", "right"],
+         "image_path": "./stratagem/shield_generator_relay.png",
+         "text": "防护罩生成中继器"},
+        {"directions": ["down", "up", "right", "up", "left", "right"],
+         "image_path": "./stratagem/tesla_tower.png",
+         "text": "特斯拉塔"},
     ],
     "blue": [
         {"directions": ["down", "left", "down", "up", "right"],
@@ -204,7 +264,7 @@ stratagems_sets = {
          "text": "AX/AR-23 “护卫犬”"},
         {"directions": ["down", "up", "left", "up", "right", "up"],
          "image_path": "./stratagem/guard_dog_dog_breath.png",
-         "text": "护卫犬腐吸"},
+         "text": "“护卫犬”腐息"},
         {"directions": ["down", "up", "up", "down", "up"],
          "image_path": "./stratagem/jump_pack.png",
          "text": "LIFT-850喷射背包"},
@@ -222,7 +282,61 @@ stratagems_sets = {
          "text": "定向护盾"},
         {"directions": ["down", "right", "up", "up", "up"],
          "image_path": "./stratagem/portable_hellbomb.png",
-         "text": "地狱火背包"},
+         "text": "便携式地狱火炸弹"},
+        {"directions": ["down", "down", "up", "left", "right"],
+         "image_path": "./stratagem/quasar_cannon.png",
+         "text": "类星体加农炮"},
+        {"directions": ["down", "right", "down", "up", "left", "left"],
+         "image_path": "./stratagem/arc_thrower.png",
+         "text": "电弧发射器"},
+        {"directions": ["down", "left", "up", "down", "right"],
+         "image_path": "./stratagem/commando.png",
+         "text": "突击兵"},
+        {"directions": ["left", "down", "right", "up", "left", "down", "up"],
+         "image_path": "./stratagem/emancipator_exosuit.png",
+         "text": "“解放者”外骨骼机甲"},
+        {"directions": ["left", "down", "right", "up", "left", "down", "down"],
+         "image_path": "./stratagem/patriot_exosuit.png",
+         "text": "“爱国者”外骨骼机甲"},
+        {"directions": ["left", "down", "right", "down", "right", "down", "up"],
+         "image_path": "./stratagem/fast_recon_vehicle.png",
+         "text": "快速侦察载具"},
+        {"directions": ["left", "right", "up", "left", "right"],
+         "image_path": "./stratagem/gl-52_de-escalator.png",
+         "text": "缓和使者"},
+        {"directions": ["down", "left", "up", "left", "down"],
+         "image_path": "./stratagem/grenade_launcher.png",
+         "text": "榴弹发射器"},
+        {"directions": ["down", "up", "left", "up", "right", "left"],
+         "image_path": "./stratagem/guard_dog_k-9.png",
+         "text": "“护卫犬”K-9"},
+        {"directions": ["down", "left", "up", "down", "down"],
+         "image_path": "./stratagem/heavy_machine_gun.png",
+         "text": "重机枪"},
+        {"directions": ["down", "up", "up", "down", "left", "right"],
+         "image_path": "./stratagem/hover_pack.png",
+         "text": "悬浮背包"},
+        {"directions": ["down", "left", "right", "right", "up"],
+         "image_path": "./stratagem/one_true_flag.png",
+         "text": "唯一真旗"},
+        {"directions": ["down", "right", "down", "up", "left", "right"],
+         "image_path": "./stratagem/railgun.png",
+         "text": "磁轨炮"},
+        {"directions": ["down", "left", "right", "right", "left"],
+         "image_path": "./stratagem/recoilless_rifle.png",
+         "text": "无后坐力炮"},
+        {"directions": ["down", "down", "up", "down", "down"],
+         "image_path": "./stratagem/spear.png",
+         "text": "飞矛"},
+        {"directions": ["down", "left", "down", "up", "up", "left"],
+         "image_path": "./stratagem/stalwart.png",
+         "text": "盟友"},
+        {"directions": ["down", "left", "down", "up", "up", "left"],
+         "image_path": "./stratagem/sta-x3_w.a.s.p._launcher.png",
+         "text": "Sta-X3 W.A.S.P.发射器"},
+        {"directions": ["down", "left", "up", "down", "left"],
+         "image_path": "./stratagem/sterilizer.png",
+         "text": "灭菌器"},
     ]
 }
 
@@ -352,7 +466,7 @@ class GameState:
 
     def _create_tkinter_input(self):
         root = self._get_tkinter_root()  # 获取 Tkinter 根窗口
-        root.overrideredirect(True) # 绕过窗口管理器
+        root.overrideredirect(True)  # 绕过窗口管理器
 
         # 创建一个顶层窗口
         top = Toplevel(root)
@@ -513,8 +627,9 @@ class GameState:
             for stratagem in stratagems_sets[key]:
                 image = load_image(stratagem["image_path"], alpha=50 if self.editing_stratagem_set else 255)
                 image_rect = image.get_rect(center=(
-                screen_width // 2 - all_stratagems_font.render(stratagem["text"], True, white).get_width() // 2 - 10,
-                50 + y_offset))
+                    screen_width // 2 - all_stratagems_font.render(stratagem["text"], True,
+                                                                   white).get_width() // 2 - 10,
+                    50 + y_offset))
 
                 text_surface = all_stratagems_font.render(stratagem["text"], True, white)
                 text_rect = text_surface.get_rect(
@@ -625,13 +740,13 @@ while running:
             if game_state.state == "menu":
                 game_state.start_game()
             elif game_state.state == "game":
-                if event.key == pygame.K_UP:
+                if event.key == pygame.K_w:
                     game_state.check_input("up")
-                elif event.key == pygame.K_DOWN:
+                elif event.key == pygame.K_s:
                     game_state.check_input("down")
-                elif event.key == pygame.K_LEFT:
+                elif event.key == pygame.K_a:
                     game_state.check_input("left")
-                elif event.key == pygame.K_RIGHT:
+                elif event.key == pygame.K_d:
                     game_state.check_input("right")
         elif event.type == pygame.MOUSEBUTTONDOWN:
             game_state.check_button_click(event.pos)
